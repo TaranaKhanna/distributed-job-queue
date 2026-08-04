@@ -2,12 +2,9 @@ package main
 
 import (
 	"fmt"
-	"worker/worker/internal/redis"
+	"worker/internal/redis"
+	"worker/internal/worker"
 )
-
-func greet(name string) string {
-	return "Hello " + name
-}
 
 func main(){
 	client := redis.NewClient()
@@ -15,5 +12,5 @@ func main(){
 	fmt.Println("Worker Started!!")
 	fmt.Println(client)
 
-	_= redis.Ctx
+	worker.ProcessOneJob(client)
 }
