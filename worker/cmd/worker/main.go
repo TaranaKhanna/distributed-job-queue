@@ -12,5 +12,7 @@ func main(){
 	fmt.Println("Worker Started!!")
 	fmt.Println(client)
 
-	worker.ProcessOneJob(client)
+	for {
+		worker.ProcessOneJob(client)
+	}
 }
